@@ -15,13 +15,48 @@ struct ContentView: View {
     @State var processError: String?
     @State var showingAlert = false
     
+    @State var projectList: [ProjectItem] = []
+    
     var body: some View {
+        
         GeometryReader { geo in
-            VStack {
-                Button("Upload DSYM's") {
-                    showProjectDirectoryDialog()
+            
+            HSplitView(content: {
+                
+                VStack {
+                    
+                    Text("Firebase DSYM Uploader")
+                        .font(.title2)
+                        .multilineTextAlignment(.center)
+                        .padding(20)
+                    
+                    Button("Upload DSYM's") {
+                        showProjectDirectoryDialog()
+                    }
                 }
-            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                
+                
+                if projectList.isEmpty {
+                    
+                    Text("You don't have a project yet")
+                        .truncationMode(.tail)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(0)
+                        .frame(width: 240, height: geo.size.height, alignment: .center)
+                    
+                } else {
+                    
+                    List(projectList) { project in
+                        ProjectItemView(item: project)
+                    }
+                    .frame(width: 240, height: geo.size.height, alignment: .center)
+                    
+                }
+                
+            })
+            
+            
         }
         .alert(isPresented: $showingAlert, content: {
             Alert(title: Text("An Error occured"), message: Text(processError ?? "-"), dismissButton: .cancel())
@@ -78,8 +113,12 @@ struct ContentView: View {
         
         do {
             try Process.run(executableURL, arguments: arguments,
-                             terminationHandler: { _ in
-                                print("completed...")
+                             terminationHandler: { process in
+                                if process.terminationStatus == 0 {
+                                    let item = ProjectItem(name: projectName, url: mutableProject)
+                                    projectList.append(item)
+                                    print("completed...")
+                                }
                              })
         } catch {
             processError = error.localizedDescription
@@ -93,6 +132,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                
+        }
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9165CDA264BCCC50063F1D4 /* ProjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9165CD9264BCCC50063F1D4 /* ProjectItem.swift */; };
+		F9165CDD264BCDFE0063F1D4 /* ProjectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9165CDC264BCDFE0063F1D4 /* ProjectItemView.swift */; };
 		F98238C4264AB5ED009AEDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98238C3264AB5ED009AEDCC /* AppDelegate.swift */; };
 		F98238C6264AB5ED009AEDCC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98238C5264AB5ED009AEDCC /* ContentView.swift */; };
 		F98238C8264AB5ED009AEDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98238C7264AB5ED009AEDCC /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F9165CD9264BCCC50063F1D4 /* ProjectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItem.swift; sourceTree = "<group>"; };
+		F9165CDC264BCDFE0063F1D4 /* ProjectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectItemView.swift; sourceTree = "<group>"; };
 		F98238C0264AB5ED009AEDCC /* DSYM-Uploder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DSYM-Uploder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98238C3264AB5ED009AEDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F98238C5264AB5ED009AEDCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				F98238CF264AB5ED009AEDCC /* Info.plist */,
 				F98238D0264AB5ED009AEDCC /* DSYM_Uploder.entitlements */,
 				F98238C9264AB5ED009AEDCC /* Preview Content */,
+				F9165CD9264BCCC50063F1D4 /* ProjectItem.swift */,
+				F9165CDC264BCDFE0063F1D4 /* ProjectItemView.swift */,
 			);
 			path = "DSYM-Uploder";
 			sourceTree = "<group>";
@@ -145,6 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98238C6264AB5ED009AEDCC /* ContentView.swift in Sources */,
+				F9165CDA264BCCC50063F1D4 /* ProjectItem.swift in Sources */,
+				F9165CDD264BCDFE0063F1D4 /* ProjectItemView.swift in Sources */,
 				F98238C4264AB5ED009AEDCC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +303,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kuka.DSYM-Uploder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -319,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kuka.DSYM-Uploder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
